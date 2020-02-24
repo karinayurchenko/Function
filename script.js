@@ -1,20 +1,21 @@
 //function1
-const getMaxDigit = (number) => {
+function getMaxDigit (number) {
     const arr = number.toString();
         return Math.max (...arr);
 };
 console.log (getMaxDigit(21758));
 
 //function2
-function pow (n, exp) {
-    let result = 1;
-    result = n;
-        for (let i = 1; i<exp; i++) {
+function pow (n, exp) { 
+    if(n === 0)
+    return 1;
+    let result = n;
+        for (let i = 1; i < exp; i++) {
             result *= n;
         };
         return result;
 };
-console.log (pow (3,4));
+console.log (pow (0,4));
 
 //function3
 function getUpperCase (name) {
@@ -52,10 +53,10 @@ console.log (countLetter ('a', 'astalavista'));
 
 //function7
 //function8
-function getRandomPassword (a) {
+function getRandomPassword (num) {
     let password = '';
-    let varietyNumber = "123456";
-    for (var i = 0; i < a; i++){
+    const varietyNumber = "123456";
+    for (let i = 0; i < num; i++){
         password += varietyNumber.charAt(Math.floor(Math.random() * varietyNumber.length));     
     }
     return password;
@@ -77,11 +78,7 @@ console.log (deleteLetters ( 'a', 'blablabla'));
 //function10
 function isPalyndrom (word) {
     const reverseWord = word.split('').reverse().join('');
-    if (reverseWord === word) {
-        return true;
-    } else {
-        return false;
-      }
+    return reverseWord === word;
 }
 console.log (isPalyndrom ('madam'));
 
